@@ -5,6 +5,14 @@
   "description": "WordPress plugin bundling @mt-planning/reading-tracker.",
   "license": "GPL-2.0-or-later",
   "author": "MT-planning, Ltd.",
+  "homepage": "https://reading-tracker.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MT-planning/reading-tracker-wp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MT-planning/reading-tracker-wp/issues"
+  },
   "scripts": {
     "copy-lib": "node scripts/copy-lib.mjs",
     "postinstall": "node scripts/copy-lib.mjs"

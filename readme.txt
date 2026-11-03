@@ -1,5 +1,5 @@
 === Reading Tracker ===
-Contributors: mtplanning
+Contributors: junyabuki
 Tags: accessibility, reading, reading guide, dyslexia, a11y
 Requires at least: 6.3
 Tested up to: 7.1
