@@ -1,0 +1,15 @@
+{
+  "name": "reading-tracker-wp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WordPress plugin bundling @mt-planning/reading-tracker.",
+  "license": "GPL-2.0-or-later",
+  "author": "MT-planning, Ltd.",
+  "scripts": {
+    "copy-lib": "node scripts/copy-lib.mjs",
+    "postinstall": "node scripts/copy-lib.mjs"
+  },
+  "devDependencies": {
+    "@mt-planning/reading-tracker": "0.1.1"
+  }
+}

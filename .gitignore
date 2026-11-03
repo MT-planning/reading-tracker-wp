@@ -1,0 +1,26 @@
+# 依存パッケージ（npm install で取得する。必要なファイルは assets/js/ にコピーしてコミットする）
+node_modules/
+
+# 配布用 zip などのビルド成果物
+*.zip
+/build/
+
+# ローカル専用のメモ・設定
+CLAUDE.md
+*.code-workspace
+.claude/
+.vscode/
+.idea/
+.env
+.wp-env.override.json
+
+# 確認作業で出るファイル
+.playwright-mcp/
+wp-cli.phar
+*.log
+*.tmp
+
+# OS が作るファイル
+.DS_Store
+Thumbs.db
+desktop.ini

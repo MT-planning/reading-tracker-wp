@@ -1,0 +1,11 @@
+.git
+.gitignore
+.distignore
+node_modules
+scripts
+package.json
+package-lock.json
+CLAUDE.md
+img
+*.code-workspace
+.playwright-mcp
