@@ -15,7 +15,8 @@
   },
   "scripts": {
     "copy-lib": "node scripts/copy-lib.mjs",
-    "postinstall": "node scripts/copy-lib.mjs"
+    "postinstall": "node scripts/copy-lib.mjs",
+    "zip": "node scripts/build-zip.mjs"
   },
   "devDependencies": {
     "@mt-planning/reading-tracker": "0.1.1"
