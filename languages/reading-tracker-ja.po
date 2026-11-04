@@ -21,7 +21,7 @@ msgstr "Reading Tracker"
 
 #. Description of the plugin
 msgid "Adds a reading guide to your site: visitors can dim the page and keep a reading band that follows the pointer."
-msgstr "サイトに読字ガイドを追加します。訪問者は画面を暗くして、ポインターに沿って動く読む位置の帯を表示できます。"
+msgstr "ウェブサイトに読字ガイド（リーディングトラッカー）を追加することができます。"
 
 msgid "Settings"
 msgstr "設定"
