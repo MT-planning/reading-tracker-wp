@@ -53,7 +53,7 @@ The text size is changed by scaling the root font size (`html { font-size }`). I
 
 = The layout breaks when line spacing or font is changed. =
 
-Set "Content area" to a selector that matches only your post content. The default is `.entry-content, .wp-block-post-content`, which fits most classic and block themes.
+By default, line spacing and font changes apply to the whole page. Set "Content area" to a selector that matches only your post content, for example `.entry-content, .wp-block-post-content`, which fits most classic and block themes.
 
 = Can I control where the guide appears from code? =
 
@@ -63,3 +63,4 @@ Use the `mtp_rt_enabled` filter (return `false` to disable it on the current req
 
 = 0.1.0 =
 * First release. Bundles @mt-planning/reading-tracker 0.1.1.
+* Includes a Japanese translation of the settings screen.
