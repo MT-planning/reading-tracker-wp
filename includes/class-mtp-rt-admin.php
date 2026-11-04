@@ -205,7 +205,13 @@ class MTP_RT_Admin {
 		}
 		?>
 		<div class="wrap">
-			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+			<h1>
+				<?php if ( 0 === strpos( get_user_locale(), 'ja' ) ) : // The logo text is Japanese. ?>
+					<img src="<?php echo esc_url( plugins_url( 'assets/images/logo.png', MTP_RT_FILE ) ); ?>" alt="<?php echo esc_attr( get_admin_page_title() ); ?>" width="251" height="40" style="display:block;max-width:100%;height:auto">
+				<?php else : ?>
+					<?php echo esc_html( get_admin_page_title() ); ?>
+				<?php endif; ?>
+			</h1>
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( self::GROUP );
