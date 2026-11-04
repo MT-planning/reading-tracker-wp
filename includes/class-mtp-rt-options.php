@@ -93,6 +93,14 @@ class MTP_RT_Options {
 					$out['post_types'][] = $pt;
 				}
 			}
+		} elseif ( 'everywhere' === $out['display'] ) {
+			// The checkboxes are disabled (not submitted) while "All pages" is selected: keep the saved choice.
+			$saved = get_option( self::OPTION );
+			if ( is_array( $saved ) && isset( $saved['post_types'] ) && is_array( $saved['post_types'] ) ) {
+				$out['post_types'] = array_values( array_intersect( $saved['post_types'], array_keys( self::selectable_post_types() ) ) );
+			} else {
+				$out['post_types'] = $d['post_types'];
+			}
 		}
 
 		$position        = self::str( $input, 'position' );

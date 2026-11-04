@@ -22,6 +22,31 @@ class MTP_RT_Admin {
 		add_action( 'admin_menu', array( __CLASS__, 'add_page' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( MTP_RT_FILE ), array( __CLASS__, 'action_links' ) );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue' ) );
+	}
+
+	/**
+	 * On the settings page, disable the post type checkboxes while "All pages" is selected.
+	 *
+	 * @param string $hook_suffix Current admin page.
+	 */
+	public static function enqueue( $hook_suffix ) {
+		if ( 'settings_page_' . self::PAGE !== $hook_suffix ) {
+			return;
+		}
+		$handle = 'mtp-rt-admin';
+		wp_register_script( $handle, false, array(), MTP_RT_LIB_VERSION, true );
+		wp_enqueue_script( $handle );
+		wp_add_inline_script(
+			$handle,
+			'(function(){'
+			. 'var radios=document.querySelectorAll(\'input[name="' . esc_js( self::name( 'display' ) ) . '"]\'),'
+			. 'boxes=document.querySelectorAll("#mtp_rt_post_types input");'
+			. 'function sync(){var all=false;radios.forEach(function(r){if(r.checked&&r.value==="everywhere"){all=true;}});'
+			. 'boxes.forEach(function(b){b.disabled=all;});}'
+			. 'radios.forEach(function(r){r.addEventListener("change",sync);});sync();'
+			. '})();'
+		);
 	}
 
 	/**
@@ -215,10 +240,10 @@ class MTP_RT_Admin {
 				<input type="radio" name="<?php echo esc_attr( self::name( 'display' ) ); ?>" value="post_types" <?php checked( $o['display'], 'post_types' ); ?>>
 				<?php esc_html_e( 'Only on single pages of these content types:', 'reading-tracker' ); ?>
 			</label>
-			<p style="margin-left:1.8em">
+			<p id="mtp_rt_post_types" style="margin-left:1.8em">
 				<?php foreach ( MTP_RT_Options::selectable_post_types() as $slug => $label ) : ?>
 					<label style="margin-right:1em">
-						<input type="checkbox" name="<?php echo esc_attr( self::name( 'post_types' ) ); ?>[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, (array) $o['post_types'], true ) ); ?>>
+						<input type="checkbox" name="<?php echo esc_attr( self::name( 'post_types' ) ); ?>[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, (array) $o['post_types'], true ) ); ?> <?php disabled( $o['display'], 'everywhere' ); ?>>
 						<?php echo esc_html( $label ); ?>
 					</label>
 				<?php endforeach; ?>
