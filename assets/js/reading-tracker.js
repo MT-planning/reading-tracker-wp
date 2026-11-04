@@ -4,7 +4,7 @@
   var DEFAULT_SETTINGS = Object.freeze({
     gapPx: 120,
     gapColor: "rgba(143, 184, 154, 0.25)",
-    overlayColor: "rgba(15, 23, 42, 0.82)",
+    overlayColor: "rgba(15, 23, 42, 0.85)",
     blendMultiply: false,
     verticalWriting: false,
     pageFontSizePercent: 100,
@@ -618,7 +618,7 @@
       el.gapHex.value = gap.hex;
       el.gapAlpha.value = String(gap.alphaPercent);
       el.gapAlphaOut.textContent = `${gap.alphaPercent}%`;
-      const mask = parseRgbaColor(s.overlayColor, "#0f172a", 82);
+      const mask = parseRgbaColor(s.overlayColor, "#0f172a", 85);
       el.maskHex.value = mask.hex;
       el.maskAlpha.value = String(mask.alphaPercent);
       el.maskAlphaOut.textContent = `${mask.alphaPercent}%`;

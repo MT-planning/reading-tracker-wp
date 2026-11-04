@@ -48,7 +48,7 @@ class MTP_RT_Options {
 			'gapColor'         => '#8fb89a',
 			'gapOpacity'       => 25,
 			'overlayColor'     => '#0f172a',
-			'overlayOpacity'   => 82,
+			'overlayOpacity'   => 85,
 			'blendMultiply'    => false,
 			'verticalWriting'  => false,
 			'fontSizePercent'  => 100,
