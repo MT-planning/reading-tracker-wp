@@ -42,7 +42,7 @@ class MTP_RT_Options {
 			'persist'          => true,
 			'resume'           => true,
 			'fontPicker'       => true,
-			'contentSelector'  => '.entry-content, .wp-block-post-content',
+			'contentSelector'  => '', // Empty = whole page.
 			// Initial guide settings (visitors' saved settings take precedence).
 			'gapPx'            => 120,
 			'gapColor'         => '#8fb89a',

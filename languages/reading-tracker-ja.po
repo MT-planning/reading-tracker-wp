@@ -110,6 +110,11 @@ msgstr "訪問者の端末にインストールされたフォントから選べ
 msgid "CSS selector of the area where line spacing and font changes apply. Limiting it to the post content keeps the layout from breaking. Leave empty to apply to the whole page."
 msgstr "行間とフォントの変更を反映する範囲の CSS セレクターです。本文に限定するとレイアウトが崩れにくくなります。空欄にするとページ全体に反映します。"
 
+#. translators: %s: example CSS selector.
+#, php-format
+msgid "Example: %s"
+msgstr "例: %s"
+
 #. translators: 1: minimum, 2: maximum (pixels).
 #, php-format
 msgid "Height of the band (width in vertical writing mode). %1$d–%2$d px."

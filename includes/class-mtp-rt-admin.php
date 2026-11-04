@@ -312,7 +312,13 @@ class MTP_RT_Admin {
 			esc_attr( self::name( 'contentSelector' ) ),
 			esc_attr( $o['contentSelector'] )
 		);
-		echo '<p class="description">' . esc_html__( 'CSS selector of the area where line spacing and font changes apply. Limiting it to the post content keeps the layout from breaking. Leave empty to apply to the whole page.', 'reading-tracker' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'CSS selector of the area where line spacing and font changes apply. Limiting it to the post content keeps the layout from breaking. Leave empty to apply to the whole page.', 'reading-tracker' ) . '<br>';
+		printf(
+			/* translators: %s: example CSS selector. */
+			esc_html__( 'Example: %s', 'reading-tracker' ),
+			'<code>.entry-content, .wp-block-post-content</code>'
+		);
+		echo '</p>';
 	}
 
 	/**
